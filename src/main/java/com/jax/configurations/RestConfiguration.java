@@ -47,14 +47,12 @@ public class RestConfiguration {
   public Swagger2Feature getSwagger2Feature() {
     Swagger2Feature swagger2Feature = null;
     try {
-      
       swagger2Feature = new Swagger2Feature();
       swagger2Feature.setTitle("CXF Rest Services");
       swagger2Feature.setDescription("Rest Services");
       swagger2Feature.setPrettyPrint(true);
       swagger2Feature.setVersion("v1.0.0");
       swagger2Feature.setContact("Contact");
-      
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -74,8 +72,6 @@ public class RestConfiguration {
       endpoint.setFeatures(Arrays.asList(getSwagger2Feature()));
       endpoint.getInInterceptors().add(new LoggingInInterceptor());
       endpoint.getOutInterceptors().add(new LoggingOutInterceptor());
-      
-
     } catch (Exception e) {
       e.printStackTrace();
     }
